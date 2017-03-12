@@ -251,10 +251,10 @@ include_once("Connection.php");
                           <div class="panel-body coupon-body">
                             <div class="first-last-name">
                                 <div class="input-box name1">
-                                    <input type="text" placeholder="Coupne Code" class="info" name="coupne">
+                                    <input type="text" placeholder="Coupne Code" class="info" name="coupne" id="coupne">
                                 </div>
                                 <div class="input-box name2">
-                                    <Button type="button"  class="in-btn" onclick="foo()">Apply Coupon</Button>
+                                    <Button type="button"  class="in-btn" id="submit" name="submit">Apply Coupon</Button>
                                 </div>
                             </div>
                           </div>
@@ -418,10 +418,13 @@ include_once("Connection.php");
                                 echo'<td class="cgt-des">'; echo $row['Price']*$row['Quantity']; echo'</td>';
                             echo '</tr>';
                             $total += $row['Price']*$row['Quantity']; }
-                            $_SESSION['a']=10;
+                            
                             echo'<tr class="cart_item">';
                                echo '<td class="ctg-type">After Discount(if applicable)</td>';
-                                echo'<td class="cgt-des">'; ?></td>
+                                echo'<td class="cgt-des">'; ?><?php  $result ="select Discount from cart where user ='akshit'";
+                $res = mysqli_query($conn,$result);
+                $row =  mysqli_fetch_array($res);
+                echo $row['Discount'];?> </td>
                             </tr>
                             <tr class="cart_item">
                                 <td class="ctg-type">Shipping</td>
@@ -429,7 +432,10 @@ include_once("Connection.php");
                             </tr>
                             <tr class="cart_item">
                                 <td class="ctg-type"> Total</td>
-                                <td class="cgt-des"> $ 1.026.00 </td>
+                                <td class="cgt-des"> <?php  $result ="select Discount from cart where user ='akshit'";
+                $res = mysqli_query($conn,$result);
+                $row =  mysqli_fetch_array($res);
+                echo $row['Discount'];?> </td>
                             </tr>
                         </tbody>
                     </table>
@@ -442,7 +448,7 @@ include_once("Connection.php");
                             <form action="#">
                                <div class="pay-type-total">
                                                                 <div class="input-box pt20 mt20">
-                                    <input type="submit" class="in-btn" name="processed-checkout" value="Place order">
+                                    <input type="submit" class="in-btn" name="placed" id="placed" onclick = "foo()" value="Place order">
                                 </div>
                             </form>
                         </div>
@@ -555,7 +561,7 @@ include_once("Connection.php");
 
             $.ajax({
                 type: 'POST',
-                url: 'discount.php',
+                url: 'orderplace.php',
                 //dataType:'json', // add json datatype to get json
      
                 success: function(data) {
@@ -565,6 +571,29 @@ include_once("Connection.php");
                 }
             });
  }
+ $(document).ready(function(){
+$("#submit").click(function(){
+var coupon = $("#coupne").val();
+
+// Returns successful data submission message when the entered information is stored in database.
+var dataString = 'coupne='+ coupon; 
+$.ajax({
+type: "POST",
+url: "discount.php",
+data: dataString,
+cache: false,
+success: function(result){
+//alert(result);
+window.alert(result);
+window.location.reload();
+}
+});
+
+return false;
+});
+});
+
+
         </script>
     </body>
 
