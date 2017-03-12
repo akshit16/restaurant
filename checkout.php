@@ -1,3 +1,10 @@
+<?php 
+session_start();
+include_once("Connection.php");
+
+
+      //  foreach ($rows as $row) {
+          ?>
 <!doctype html>
 <html class="no-js" lang="">
     
@@ -247,7 +254,7 @@
                                     <input type="text" placeholder="Coupne Code" class="info" name="coupne">
                                 </div>
                                 <div class="input-box name2">
-                                    <input type="submit" value="Apply Coupon" name="processed-checkout" class="in-btn">
+                                    <Button type="button"  class="in-btn" onclick="foo()">Apply Coupon</Button>
                                 </div>
                             </div>
                           </div>
@@ -400,19 +407,21 @@
                             <td class="ctg-type"> Product</td>
                             <td class="cgt-des"> Total</td>
                         </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="cart_item check-item">
-                                <td class="ctg-type"> Fusce Laoreet Volutpat  × <span>2</span></td>
-                                <td class="cgt-des"> $26.00</td>
-                            </tr>
-                            <tr class="cart_item check-item">
-                                <td class="ctg-type"> Duis Odio Nulla  × <span>2</span></td>
-                                <td class="cgt-des">$1000.00</td>
-                            </tr>
-                            <tr class="cart_item">
-                                <td class="ctg-type">After Discount(if applicable)</td>
-                                <td class="cgt-des">$1.026.00</td>
+                        </thead><?php  $result ="select Dish,Price,Quantity from cart where user ='akshit'";
+                $res = mysqli_query($conn,$result);
+                $total=0;
+                
+                        echo '<tbody>';
+                        while ($row =  mysqli_fetch_array($res) ){
+                          echo ' <tr class="cart_item check-item">';
+                                echo '<td class="ctg-type">';echo $row['Dish'].'×'.$row['Quantity']; echo'</td>';
+                                echo'<td class="cgt-des">'; echo $row['Price']*$row['Quantity']; echo'</td>';
+                            echo '</tr>';
+                            $total += $row['Price']*$row['Quantity']; }
+                            $_SESSION['a']=10;
+                            echo'<tr class="cart_item">';
+                               echo '<td class="ctg-type">After Discount(if applicable)</td>';
+                                echo'<td class="cgt-des">'; ?></td>
                             </tr>
                             <tr class="cart_item">
                                 <td class="ctg-type">Shipping</td>
@@ -541,6 +550,22 @@
         <script src="js/plugins.js"></script>
 		<!-- main js -->
         <script src="js/main.js"></script>
+        <script type="text/javascript">
+            function foo (){
+
+            $.ajax({
+                type: 'POST',
+                url: 'discount.php',
+                //dataType:'json', // add json datatype to get json
+     
+                success: function(data) {
+                    alert(data);
+                    
+
+                }
+            });
+ }
+        </script>
     </body>
 
 <!-- Mirrored from demo.designshopify.com/html_lavie/lavie_resturant/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Oct 2016 17:59:26 GMT -->

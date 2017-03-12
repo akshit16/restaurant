@@ -1,3 +1,10 @@
+<?php 
+session_start();
+include_once("Connection.php");
+
+
+      //  foreach ($rows as $row) {
+          ?>
 <!doctype html>
 <html class="no-js" lang="">
     
@@ -127,17 +134,17 @@
                                      <h2>Categories</h2>
                                  </div>
                                  <ul>                               
-                                     <li class="active"><a  data-toggle="tab" href="#1">Indian</a></li>
-                                     <li><a  data-toggle="tab" href="#2">Chinese</a></li>
+                                     <li class="active"><a  data-toggle="tab" href="#1" id ="ind">Indian</a></li>
+                                     <li><a  data-toggle="tab" href="#2" id="chi">Chinese</a></li>
                                      
-                                    <li><a data-toggle="tab" href="#4">Hot Breads/Parantha</a></li>
-                                     <li><a data-toggle="tab" href="#5">Tandoori</a></li>
-                                     <li><a data-toggle="tab" href="#6">Mutton and Egg</a></li>
-                                     <li><a data-toggle="tab" href="#7">Rice</a></li>
+                                    <li><a data-toggle="tab" href="#3" id="bread">Hot Breads/Parantha</a></li>
+                                     <li><a data-toggle="tab" href="#5" id="tand">Tandoori</a></li>
+                                     <li><a data-toggle="tab" href="#6" id="egg">Mutton and Egg</a></li>
+                                     <li><a data-toggle="tab" href="#7" id="rice">Rice</a></li>
                                      
-                                     <li><a data-toggle="tab" href="#9">Curd/Raita</a></li>
-                                     <li><a data-toggle="tab" href="#10">Salad/Papad</a></li>
-                                     <li><a data-toggle="tab" href="#11">Beverages</a></li>                                                                           
+                                     <li><a data-toggle="tab" href="#8" id="curd">Curd/Raita</a></li>
+                                     <li><a data-toggle="tab" href="#9" id="salad">Salad/Papad</a></li>
+                                     <li><a data-toggle="tab" href="#10" id="bev">Beverages</a></li>                                                                           
                                  </ul>
                              </div>
                          </aside>
@@ -160,18 +167,29 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <tr >
-                                            <td>Pav Bhaji</td>
-                                            <td>50</td>
-                                            <td>
-                                                <div class="addp">
-                                                    <span>
-                                                    <button type="button" class="minus" name="m1" id="">-</button>
-                                                    <span class="figure" id="f1">0</span>
-                                                    <button type="button" class="plus" name="p1">+</button></span>
-                                                </div>
-                                            </td>
-                                          </tr>
+										
+										<?php  
+													$sql="select Dish,Price from menu where Category='Indian'";
+													$res = mysqli_query($conn,$sql);
+													$count = 1;
+													while ($row =  mysqli_fetch_array($res) ){
+														echo '<tr><td>';
+														echo $row['Dish'];
+														echo '</td><td>';
+														echo $row['Price'];
+														echo '</td><td>';
+														echo "<div class='addp'><span>";
+														 echo'<button type="button"  class="minus" name = "mi'.$count.'">-</button>';
+													    echo  '<span class="figure" id = "fi'. $count.'">0</span>';
+														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
+														echo '<button type="button" class="plus" name = "pi'.$count.'" >+</button>';
+														echo '</span></div>';
+														echo "</td></tr>";
+														$count++;
+														}
+														
+										?>
+                                          
                                         </tbody>
                                     </table>
                               </div>
@@ -185,19 +203,29 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <tr >
-                                            <td>Pav Bhaji</td>
-                                            <td>50</td>
-                                            <td>
-                                                <div class="addp">
-                                                    <span>
-                                                    <button type="button" class="minus" name="m2" >-</button>
-                                                    <span class="figure" id="f2">0</span>
-                                                    <input type="hidden" name="figvalue" value="0" class="figvalue">
-                                                    <button type="button" class="plus" name="p2">+</button></span>
-                                                </div>
-                                            </td>
-                                          </tr>
+										
+											<?php  
+													$sql="select Dish,Price from menu where Category='Chinese'";
+													$res = mysqli_query($conn,$sql);
+													$count = 1;
+													while ($row =  mysqli_fetch_array($res) ){
+														echo '<tr><td>';
+														echo $row['Dish'];
+														echo '</td><td>';
+														echo $row['Price'];
+														echo '</td><td>';
+														echo "<div class='addp'><span>";
+														 echo'<button type="button" class="minus" name = "mc'.$count.'">-</button>';
+													    echo  '<span class="figure" id = "fc'. $count.'">0</span>';
+														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
+														echo '<button type="button" class="plus" name = "pc'.$count.'" >+</button>';
+														echo '</span></div>';
+														echo "</td></tr>";
+														$count++;
+														}
+														
+										?>
+                                         
                                         </tbody>
                                     </table>
                                   </div>
@@ -211,19 +239,27 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <tr >
-                                            <td>Pav Bhaji</td>
-                                            <td>50</td>
-                                            <td>
-                                                <div class="addp">
-                                                    <span>
-                                                    <button type="button" class="minus" >-</button>
-                                                    <span class="figure">0</span>
-                                                    <input type="hidden" name="figvalue" value="0" class="figvalue">
-                                                    <button type="button" class="plus" >+</button></span>
-                                                </div>
-                                            </td>
-                                          </tr>
+                                         	<?php  
+													$sql="select Dish,Price from menu where Category='Hot Breads'";
+													$res = mysqli_query($conn,$sql);
+													$count = 1;
+													while ($row =  mysqli_fetch_array($res) ){
+														echo '<tr><td>';
+														echo $row['Dish'];
+														echo '</td><td>';
+														echo $row['Price'];
+														echo '</td><td>';
+														echo "<div class='addp'><span>";
+														 echo'<button type="button" class="minus" name = "mh'.$count.'">-</button>';
+													    echo  '<span class="figure" id = "fh'. $count.'">0</span>';
+														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
+														echo '<button type="button" class="plus" name = "ph'.$count.'" >+</button>';
+														echo '</span></div>';
+														echo "</td></tr>";
+														$count++;
+														}
+														
+										?>
                                         </tbody>
                                     </table>
                                   </div>
@@ -238,7 +274,7 @@
                                         </thead>
                                         <tbody>
                                           <tr >
-                                            <td>Pav Bhaji</td>
+                                            <td>Pav Bhaji12</td>
                                             <td>50</td>
                                             <td>
                                                 <div class="addp">
@@ -262,20 +298,28 @@
                                             <th>Quantity</th>
                                           </tr>
                                         </thead>
-                                        <tbody>
-                                          <tr >
-                                            <td>Pav Bhaji5</td>
-                                            <td>50</td>
-                                            <td>
-                                                <div class="addp">
-                                                    <span>
-                                                    <button type="button" class="minus" >-</button>
-                                                    <span class="figure">0</span>
-                                                    <input type="hidden" name="figvalue" value="0" class="figvalue">
-                                                    <button type="button" class="plus" >+</button></span>
-                                                </div>
-                                            </td>
-                                          </tr>
+                                       <tbody>
+                                         	<?php  
+													$sql="select Dish,Price from menu where Category='Tandoori'";
+													$res = mysqli_query($conn,$sql);
+													$count = 1;
+													while ($row =  mysqli_fetch_array($res) ){
+														echo '<tr><td>';
+														echo $row['Dish'];
+														echo '</td><td>';
+														echo $row['Price'];
+														echo '</td><td>';
+														echo "<div class='addp'><span>";
+														 echo'<button type="button" class="minus" name = "mt'.$count.'">-</button>';
+													    echo  '<span class="figure" id = "ft'. $count.'">0</span>';
+														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
+														echo '<button type="button" class="plus" name = "pt'.$count.'" >+</button>';
+														echo '</span></div>';
+														echo "</td></tr>";
+														$count++;
+														}
+														
+										?>
                                         </tbody>
                                     </table>
                               </div>
@@ -289,45 +333,64 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <tr >
-                                            <td>Pav Bhaji</td>
-                                            <td>50</td>
-                                            <td>
-                                                <div class="addp">
-                                                    <span>
-                                                    <button type="button" class="minus" >-</button>
-                                                    <span class="figure">0</span>
-                                                    <input type="hidden" name="figvalue" value="0" class="figvalue">
-                                                    <button type="button" class="plus" >+</button></span>
-                                                </div>
-                                            </td>
-                                          </tr>
+                                         	<?php  
+													$sql="select Dish,Price from menu where Category='Mutton and Egg'";
+													$res = mysqli_query($conn,$sql);
+													$count = 1;
+													while ($row =  mysqli_fetch_array($res) ){
+														echo '<tr><td>';
+														echo $row['Dish'];
+														echo '</td><td>';
+														echo $row['Price'];
+														echo '</td><td>';
+														echo "<div class='addp'><span>";
+														 echo'<button type="button" class="minus" name = "mm'.$count.'">-</button>';
+													    echo  '<span class="figure" id = "fm'. $count.'">0</span>';
+														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
+														echo '<button type="button" class="plus" name = "pm'.$count.'" >+</button>';
+														echo '</span></div>';
+														echo "</td></tr>";
+														$count++;
+														}
+														
+										?>
                                         </tbody>
                                     </table>
                                   </div>
                                   <div id="7" class="tab-pane fade">
                                     <table class="table">
                                         <thead>
-                                          <tr>
+                                          <tr> 
                                             <th>Name</th>
                                             <th>Price</th>
                                             <th>Quantity</th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <tr >
-                                            <td>Pav Bhaji</td>
-                                            <td>50</td>
-                                            <td>
-                                                <div class="addp">
-                                                    <span>
-                                                    <button type="button" class="minus" >-</button>
-                                                    <span class="figure">0</span>
-                                                    <input type="hidden" name="figvalue" value="0" class="figvalue">
-                                                    <button type="button" class="plus" >+</button></span>
-                                                </div>
-                                            </td>
-                                          </tr>
+                                         	<?php  
+                                          //session_start();
+													$sql="select id,Dish,Price from menu where Category='Rice'";
+													$res = mysqli_query($conn,$sql);
+													$count = 1;
+													while ($row =  mysqli_fetch_array($res) ){
+														echo '<tr><td>';
+                            echo $row['id'];
+                            
+														echo $row['Dish'];
+														echo '</td><td>';
+														echo $row['Price'];
+														echo '</td><td>';
+														echo "<div class='addp'><span>";
+														 echo'<button type="button" class="minus" name = "mr'.$count.'">-</button>';
+													    echo  '<span class="figure" id = "fr'. $count.'">0</span>';
+														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
+														echo '<button type="button" class="plus" name = "pr'.$count.'" >+</button>';
+														echo '</span></div>';
+														echo "</td></tr>";
+														$count++;
+														}
+														
+										?>
                                         </tbody>
                                     </table>
                                   </div>
@@ -341,19 +404,27 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <tr >
-                                            <td>Pav Bhaji</td>
-                                            <td>50</td>
-                                            <td>
-                                                <div class="addp">
-                                                    <span>
-                                                    <button type="button" class="minus" >-</button>
-                                                    <span class="figure">0</span>
-                                                    <input type="hidden" name="figvalue1" value="0" class="figvalue">
-                                                    <button type="button" class="plus" >+</button></span>
-                                                </div>
-                                            </td>
-                                          </tr>
+                                         	<?php  
+													$sql="select Dish,Price from menu where Category='Curd/Raita'";
+													$res = mysqli_query($conn,$sql);
+													$count = 1;
+													while ($row =  mysqli_fetch_array($res) ){
+														echo '<tr><td>';
+														echo $row['Dish'];
+														echo '</td><td>';
+														echo $row['Price'];
+														echo '</td><td>';
+														echo "<div class='addp'><span>";
+														 echo'<button type="button" class="minus" name = "mu'.$count.'">-</button>';
+													    echo  '<span class="figure" id = "fu'. $count.'">0</span>';
+														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
+														echo '<button type="button" class="plus" name = "pu'.$count.'" >+</button>';
+														echo '</span></div>';
+														echo "</td></tr>";
+														$count++;
+														}
+														
+										?>
                                         </tbody>
                                     </table>
                               </div>
@@ -367,19 +438,27 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <tr >
-                                            <td>Pav Bhaji</td>
-                                            <td>50</td>
-                                            <td>
-                                                <div class="addp">
-                                                    <span>
-                                                    <button type="button" class="minus" >-</button>
-                                                    <span class="figure">0</span>
-                                                    <input type="hidden" name="figvalue" value="0" class="figvalue">
-                                                    <button type="button" class="plus" >+</button></span>
-                                                </div>
-                                            </td>
-                                          </tr>
+                                         	<?php  
+													$sql="select Dish,Price from menu where Category='Papad and Salad'";
+													$res = mysqli_query($conn,$sql);
+													$count = 1;
+													while ($row =  mysqli_fetch_array($res) ){
+														echo '<tr><td>';
+														echo $row['Dish'];
+														echo '</td><td>';
+														echo $row['Price'];
+														echo '</td><td>';
+														echo "<div class='addp'><span>";
+														 echo'<button type="button" class="minus" name = "mp'.$count.'">-</button>';
+													    echo  '<span class="figure" id = "fp'. $count.'">0</span>';
+														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
+														echo '<button type="button" class="plus" name = "pp'.$count.'" >+</button>';
+														echo '</span></div>';
+														echo "</td></tr>";
+														$count++;
+														
+														}
+										?>
                                         </tbody>
                                     </table>
                               </div>
@@ -393,19 +472,27 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <tr >
-                                            <td>Pav Bhaji</td>
-                                            <td>50</td>
-                                            <td>
-                                                <div class="addp">
-                                                    <span>
-                                                    <button type="button" class="minus" >-</button>
-                                                    <span class="figure">0</span>
-                                                    <input type="hidden" name="figvalue" value="0" class="figvalue">
-                                                    <button type="button" class="plus" >+</button></span>
-                                                </div>
-                                            </td>
-                                          </tr>
+                                         	<?php  
+													$sql="select Dish,Price from menu where Category='Beverages'";
+													$res = mysqli_query($conn,$sql);
+													$count = 1;
+													while ($row =  mysqli_fetch_array($res) ){
+														echo '<tr><td>';
+														echo $row['Dish'];
+														echo '</td><td>';
+														echo $row['Price'];
+														echo '</td><td>';
+														echo "<div class='addp'><span>";
+														 echo'<button type="button" class="minus" name = "mb'.$count.'">-</button>';
+													    echo  '<span class="figure" id = "fb'. $count.'">0</span>';
+														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
+														echo '<button type="button" class="plus" name = "pb'.$count.'" >+</button>';
+														echo '</span></div>';
+														echo "</td></tr>";
+														$count++;
+														}
+														
+										?>
                                         </tbody>
                                     </table>
                                   </div>
@@ -446,41 +533,39 @@
                                  <div class="whdget-title">
                                      <h2>Your Cart</h2>
                                  </div>
-                                <div class="total-top-rated">
+                              <div class="total-top-rated">
                                     <ul>
-                                         <li>
-                                             <div class="single-rate">
+                                       <?php  echo'<li>';
+                                       $result ="select Dish,Price,Quantity from cart where user ='akshit'  ";
+                $res = mysqli_query($conn,$result);
+                $total=0;
+                while ($row =  mysqli_fetch_array($res) ){
+                                             echo'<div class="single-rate">';
                                                  
-                                                 <div class="rate-content">
-                                                     <div class="tate-title">
-                                                         <a href="#">Fusce Laoreet Volutpat</a>
-                                                     </div>
+                                                 echo'<div class="rate-content">';
+                                                  
+                                                     echo'<div class="tate-title">';
+                                                     
+                                   
+                                   
+                                                       echo $row['Dish'];
+                                                     echo '</div>';
 
-                                                        <div class="cart-price">
-                                                           1 x 500.00 = 500
-                                                        </div>
-                                                 </div>
-                                             </div>
-                                            </li> 
-                                         <li>
-                                             <div class="single-rate">
-                                                 <div class="rate-content">
-                                                     <div class="tate-title">
-                                                         <a href="#">Fusce Laoreet Volutpat</a>
-                                                     </div>
 
-                                                        <div class="cart-price">
-                                                           1 x 500.00 = 500
-                                                        </div>
-                                                 </div>
-                                             </div>
-                                            </li> 
+                                                       echo '<div class="cart-price">';
+                                                          echo $row['Quantity'].'x'.$row['Price'].'='.$row['Quantity']*$row['Price'] ;
+                                                          $total +=  $row['Quantity']*$row['Price'];
+                                                       echo '</div>';
+                                                echo '</div>';
+                                             echo'</div>';}
+                                            echo'</li>'; ?>
+                                         
                                      </ul>
                                      <div class="sub-total">
-                                         <strong>Total:</strong> <span>Rs.513.00</span>
+                                         <strong>Total:</strong> <span><?php echo $total;?></span>
                                      </div>
                                      <div class="view-check-btn">
-                                         <a href="#" class="com-btn">Checkout</a>
+                                         <a href="cart.php" class="com-btn">Checkout</a>
                                      </div>
                                 </div>
                              </div>
@@ -489,7 +574,7 @@
 
                 </div>
             </div>
-            
+
 	</div>
     <!-- Order online Section ends-->
      
@@ -594,9 +679,10 @@
             $(".minus").click(function(){
               
                 var x=$(this).attr('name');
-                var c = x.charAt(1);
+                var c = x.substring(1, 3);
                 var clicksv = Number($('#f'+c).html());
                 clicksv--; 
+				
                 if(clicksv <0)
                 clicksv = 0;
                 $('#f'+c).html(clicksv);
@@ -604,12 +690,28 @@
             });
             $(".plus").click(function(){
                 var x=$(this).attr('name');
-                var c = x.charAt(1); 
+                var c = x.substring(1, 3); 
                 var clicksv =  Number($('#f'+c).html());
                 clicksv++;
                 $('#f'+c).html(clicksv);
                 var clicksv = 0;
                });
+             $(document).ready(function(){
+        $("button").click(function(){
+
+            $.ajax({
+                type: 'POST',
+                url: 'cart.php',
+                //dataType:'json', // add json datatype to get json
+     
+                success: function(data) {
+                    alert(data);
+                    
+
+                }
+            });
+   });
+});
 </script>
     </body>
 
