@@ -691,7 +691,7 @@ include_once("Connection.php");
             });
             $(".plus").click(function(){
                 var x=$(this).attr('name');
-                var c = x.substring(1, 3); 
+                var c = x.substring(1, 4); 
                 var clicksv =  Number($('#f'+c).html());
                 clicksv++;
                 $('#f'+c).html(clicksv);
