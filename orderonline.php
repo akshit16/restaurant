@@ -205,7 +205,7 @@ include_once("Connection.php");
                                         </thead>
                                         <tbody>
 										
-											<?php  
+											                   <?php  
                           $sql="select id,Dish,Price from menu where Category='Chinese'";
                           $res = mysqli_query($conn,$sql);
                           $count = 1;
@@ -216,15 +216,16 @@ include_once("Connection.php");
                             echo $row['Price'];
                             echo '</td><td>';
                             echo "<div class='addp'><span>";
-                             echo'<button type="button" value="'.$row['id'].'"  class="minus"  name = "mi'.$count.'">-</button>';
-                              echo  '<span class="figure" id = "fi'. $count.'">0</span>';
+                             echo'<button type="button" class="minus" name = "mb'.$count.'" value="'.$row['id'].'">-</button>';
+                              echo  '<span class="figure" id = "fb'. $count.'">0</span>';
                             echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
-                            echo '<button type="button" class="plus" value="'.$row['id'].'"  name = "pi'.$count.'" >+</button>';
+                            echo '<button type="button" class="plus" name = "pb'.$count.'" value="'.$row['id'].'" >+</button>';
                             echo '</span></div>';
                             echo "</td></tr>";
                             $count++;
                             }
-                            ?>
+                            
+                    ?>
                                          
                                         </tbody>
                                     </table>
