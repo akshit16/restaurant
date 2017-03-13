@@ -52,6 +52,7 @@ include_once("Connection.php");
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
+    <div id="full"></div>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -169,7 +170,7 @@ include_once("Connection.php");
                                         <tbody>
 										
 										<?php  
-													$sql="select Dish,Price from menu where Category='Indian'";
+													$sql="select id,Dish,Price from menu where Category='Indian'";
 													$res = mysqli_query($conn,$sql);
 													$count = 1;
 													while ($row =  mysqli_fetch_array($res) ){
@@ -179,10 +180,10 @@ include_once("Connection.php");
 														echo $row['Price'];
 														echo '</td><td>';
 														echo "<div class='addp'><span>";
-														 echo'<button type="button"  class="minus" name = "mi'.$count.'">-</button>';
+														 echo'<button type="button" value="'.$row['id'].'"  class="minus"  name = "mi'.$count.'">-</button>';
 													    echo  '<span class="figure" id = "fi'. $count.'">0</span>';
 														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
-														echo '<button type="button" class="plus" name = "pi'.$count.'" >+</button>';
+														echo '<button type="button" class="plus" value="'.$row['id'].'"  name = "pi'.$count.'" >+</button>';
 														echo '</span></div>';
 														echo "</td></tr>";
 														$count++;
@@ -205,26 +206,25 @@ include_once("Connection.php");
                                         <tbody>
 										
 											<?php  
-													$sql="select Dish,Price from menu where Category='Chinese'";
-													$res = mysqli_query($conn,$sql);
-													$count = 1;
-													while ($row =  mysqli_fetch_array($res) ){
-														echo '<tr><td>';
-														echo $row['Dish'];
-														echo '</td><td>';
-														echo $row['Price'];
-														echo '</td><td>';
-														echo "<div class='addp'><span>";
-														 echo'<button type="button" class="minus" name = "mc'.$count.'">-</button>';
-													    echo  '<span class="figure" id = "fc'. $count.'">0</span>';
-														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
-														echo '<button type="button" class="plus" name = "pc'.$count.'" >+</button>';
-														echo '</span></div>';
-														echo "</td></tr>";
-														$count++;
-														}
-														
-										?>
+                          $sql="select id,Dish,Price from menu where Category='Chinese'";
+                          $res = mysqli_query($conn,$sql);
+                          $count = 1;
+                          while ($row =  mysqli_fetch_array($res) ){
+                            echo '<tr><td>';
+                            echo $row['Dish'];
+                            echo '</td><td>';
+                            echo $row['Price'];
+                            echo '</td><td>';
+                            echo "<div class='addp'><span>";
+                             echo'<button type="button" value="'.$row['id'].'"  class="minus"  name = "mi'.$count.'">-</button>';
+                              echo  '<span class="figure" id = "fi'. $count.'">0</span>';
+                            echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
+                            echo '<button type="button" class="plus" value="'.$row['id'].'"  name = "pi'.$count.'" >+</button>';
+                            echo '</span></div>';
+                            echo "</td></tr>";
+                            $count++;
+                            }
+                            ?>
                                          
                                         </tbody>
                                     </table>
@@ -240,7 +240,7 @@ include_once("Connection.php");
                                         </thead>
                                         <tbody>
                                          	<?php  
-													$sql="select Dish,Price from menu where Category='Hot Breads'";
+													$sql="select id,Dish,Price from menu where Category='Hot Breads'";
 													$res = mysqli_query($conn,$sql);
 													$count = 1;
 													while ($row =  mysqli_fetch_array($res) ){
@@ -250,10 +250,10 @@ include_once("Connection.php");
 														echo $row['Price'];
 														echo '</td><td>';
 														echo "<div class='addp'><span>";
-														 echo'<button type="button" class="minus" name = "mh'.$count.'">-</button>';
+														 echo'<button type="button" class="minus" value="'.$row['id'].'" name = "mh'.$count.'">-</button>';
 													    echo  '<span class="figure" id = "fh'. $count.'">0</span>';
 														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
-														echo '<button type="button" class="plus" name = "ph'.$count.'" >+</button>';
+														echo '<button type="button" class="plus" name = "ph'.$count.'" value="'.$row['id'].'" >+</button>';
 														echo '</span></div>';
 														echo "</td></tr>";
 														$count++;
@@ -300,7 +300,7 @@ include_once("Connection.php");
                                         </thead>
                                        <tbody>
                                          	<?php  
-													$sql="select Dish,Price from menu where Category='Tandoori'";
+													$sql="select id,Dish,Price from menu where Category='Tandoori'";
 													$res = mysqli_query($conn,$sql);
 													$count = 1;
 													while ($row =  mysqli_fetch_array($res) ){
@@ -310,10 +310,10 @@ include_once("Connection.php");
 														echo $row['Price'];
 														echo '</td><td>';
 														echo "<div class='addp'><span>";
-														 echo'<button type="button" class="minus" name = "mt'.$count.'">-</button>';
+														 echo'<button type="button" class="minus" name = "mt'.$count.'" value="'.$row['id'].'">-</button>';
 													    echo  '<span class="figure" id = "ft'. $count.'">0</span>';
 														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
-														echo '<button type="button" class="plus" name = "pt'.$count.'" >+</button>';
+														echo '<button type="button" class="plus" name = "pt'.$count.'" value="'.$row['id'].'" >+</button>';
 														echo '</span></div>';
 														echo "</td></tr>";
 														$count++;
@@ -334,7 +334,7 @@ include_once("Connection.php");
                                         </thead>
                                         <tbody>
                                          	<?php  
-													$sql="select Dish,Price from menu where Category='Mutton and Egg'";
+													$sql="select id,Dish,Price from menu where Category='Mutton and Egg'";
 													$res = mysqli_query($conn,$sql);
 													$count = 1;
 													while ($row =  mysqli_fetch_array($res) ){
@@ -344,10 +344,10 @@ include_once("Connection.php");
 														echo $row['Price'];
 														echo '</td><td>';
 														echo "<div class='addp'><span>";
-														 echo'<button type="button" class="minus" name = "mm'.$count.'">-</button>';
+														 echo'<button type="button" class="minus" name = "mm'.$count.'" value="'.$row['id'].'">-</button>';
 													    echo  '<span class="figure" id = "fm'. $count.'">0</span>';
 														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
-														echo '<button type="button" class="plus" name = "pm'.$count.'" >+</button>';
+														echo '<button type="button" class="plus" name = "pm'.$count.'" value="'.$row['id'].'" >+</button>';
 														echo '</span></div>';
 														echo "</td></tr>";
 														$count++;
@@ -381,10 +381,10 @@ include_once("Connection.php");
 														echo $row['Price'];
 														echo '</td><td>';
 														echo "<div class='addp'><span>";
-														 echo'<button type="button" class="minus" name = "mr'.$count.'">-</button>';
+														 echo'<button type="button" class="minus" name = "mr'.$count.'" value="'.$row['id'].'">-</button>';
 													    echo  '<span class="figure" id = "fr'. $count.'">0</span>';
 														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
-														echo '<button type="button" class="plus" name = "pr'.$count.'" >+</button>';
+														echo '<button type="button" class="plus" name = "pr'.$count.'" value="'.$row['id'].'" >+</button>';
 														echo '</span></div>';
 														echo "</td></tr>";
 														$count++;
@@ -405,7 +405,7 @@ include_once("Connection.php");
                                         </thead>
                                         <tbody>
                                          	<?php  
-													$sql="select Dish,Price from menu where Category='Curd/Raita'";
+													$sql="select id,Dish,Price from menu where Category='Curd/Raita'";
 													$res = mysqli_query($conn,$sql);
 													$count = 1;
 													while ($row =  mysqli_fetch_array($res) ){
@@ -415,10 +415,10 @@ include_once("Connection.php");
 														echo $row['Price'];
 														echo '</td><td>';
 														echo "<div class='addp'><span>";
-														 echo'<button type="button" class="minus" name = "mu'.$count.'">-</button>';
+														 echo'<button type="button" class="minus" name = "mu'.$count.'" value="'.$row['id'].'">-</button>';
 													    echo  '<span class="figure" id = "fu'. $count.'">0</span>';
 														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
-														echo '<button type="button" class="plus" name = "pu'.$count.'" >+</button>';
+														echo '<button type="button" class="plus" name = "pu'.$count.'" value="'.$row['id'].'" >+</button>';
 														echo '</span></div>';
 														echo "</td></tr>";
 														$count++;
@@ -439,7 +439,7 @@ include_once("Connection.php");
                                         </thead>
                                         <tbody>
                                          	<?php  
-													$sql="select Dish,Price from menu where Category='Papad and Salad'";
+													$sql="select id,Dish,Price from menu where Category='Papad and Salad'";
 													$res = mysqli_query($conn,$sql);
 													$count = 1;
 													while ($row =  mysqli_fetch_array($res) ){
@@ -449,10 +449,10 @@ include_once("Connection.php");
 														echo $row['Price'];
 														echo '</td><td>';
 														echo "<div class='addp'><span>";
-														 echo'<button type="button" class="minus" name = "mp'.$count.'">-</button>';
+														 echo'<button type="button" class="minus" name = "mp'.$count.'" value="'.$row['id'].'">-</button>';
 													    echo  '<span class="figure" id = "fp'. $count.'">0</span>';
 														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
-														echo '<button type="button" class="plus" name = "pp'.$count.'" >+</button>';
+														echo '<button type="button" class="plus" name = "pp'.$count.'" value="'.$row['id'].'" >+</button>';
 														echo '</span></div>';
 														echo "</td></tr>";
 														$count++;
@@ -473,7 +473,7 @@ include_once("Connection.php");
                                         </thead>
                                         <tbody>
                                          	<?php  
-													$sql="select Dish,Price from menu where Category='Beverages'";
+													$sql="select id,Dish,Price from menu where Category='Beverages'";
 													$res = mysqli_query($conn,$sql);
 													$count = 1;
 													while ($row =  mysqli_fetch_array($res) ){
@@ -483,10 +483,10 @@ include_once("Connection.php");
 														echo $row['Price'];
 														echo '</td><td>';
 														echo "<div class='addp'><span>";
-														 echo'<button type="button" class="minus" name = "mb'.$count.'">-</button>';
+														 echo'<button type="button" class="minus" name = "mb'.$count.'" value="'.$row['id'].'">-</button>';
 													    echo  '<span class="figure" id = "fb'. $count.'">0</span>';
 														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
-														echo '<button type="button" class="plus" name = "pb'.$count.'" >+</button>';
+														echo '<button type="button" class="plus" name = "pb'.$count.'" value="'.$row['id'].'" >+</button>';
 														echo '</span></div>';
 														echo "</td></tr>";
 														$count++;
@@ -536,7 +536,7 @@ include_once("Connection.php");
                               <div class="total-top-rated">
                                     <ul>
                                        <?php  echo'<li>';
-                                       $result ="select Dish,Price,Quantity from cart where user ='akshit'  ";
+                                       $result ="select id,Dish,Price,Quantity from cart where user ='akshit'  ";
                 $res = mysqli_query($conn,$result);
                 $total=0;
                 while ($row =  mysqli_fetch_array($res) ){
@@ -696,20 +696,36 @@ include_once("Connection.php");
                 $('#f'+c).html(clicksv);
                 var clicksv = 0;
                });
-             $(document).ready(function(){
-        $("button").click(function(){
+                         $(document).ready(function(){
+        $(".plus").click(function(){
 
-            $.ajax({
-                type: 'POST',
-                url: 'cart.php',
-                //dataType:'json', // add json datatype to get json
-     
-                success: function(data) {
-                    alert(data);
-                    
+           var id = $(this).attr('value');
+           //alert(id);
+           var qty = this.previousElementSibling.previousElementSibling.innerHTML;
+//alert(qty);
+$("#full").load("cart1.php",{'id': id,
+                             'qty':qty   });          
 
-                }
-            });
+ 
+         // $('#full').load('cart.php');
+         
+        //$("#full").load('cart.php');
+   });
+});
+                       $(document).ready(function(){
+        $(".minus").click(function(){
+
+           var id = $(this).attr('value');
+           alert(id);
+           var qty = this.nextSibling.innerHTML;
+//alert(qty);
+$("#full").load("cart1.php",{'id': id,
+                             'qty':qty   });          
+
+ 
+         // $('#full').load('cart.php');
+         
+        //$("#full").load('cart.php');
    });
 });
 </script>
