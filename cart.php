@@ -270,7 +270,7 @@ include_once("Connection.php");
                     </table>
                     <div class="input-box tci-box text-center">
                         <input type="button" class="in-btn" name="processed-checkout" value="Processed Checkout"
-                        onclick="document.location.href='checkout.html';">
+                        onclick="document.location.href='checkout.php';">
                     </div>
                     </div>
                 </form>
