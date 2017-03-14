@@ -11,6 +11,7 @@ $result ="select code,discount from coupon where user ='akshit'";
                 //echo $row['code'];
                 //echo $row['discount'];
                 $coupon = $_POST['coupne'];
+                $_SESSION['coupon'] = $coupon;
                 //echo $coupon;
                 $resul ="select Dish,Price,Quantity from cart where user ='akshit'";
                 $re = mysqli_query($conn,$resul);

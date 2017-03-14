@@ -15,9 +15,9 @@ $row1 = mysqli_fetch_array($res1);
 $num = mysqli_num_rows($res1);
 if($num == 0)
 {
-
-$ins = "insert into cart(User,Dish,price,quantity,discount) 
-values ('Sakshi','$dish',$price,$qty,20)";
+$sum = $qty*$price;
+$ins = "insert into cart(User,Dish,price,quantity,total,discount) 
+values ('Sakshi','$dish',$price,$qty,$sum,20)";
 if(! mysqli_query( $conn, $ins ))
 {
 die(mysqli_error($conn));}
@@ -33,12 +33,19 @@ $up = "update cart set quantity = $qty where user = 'Sakshi' and Dish = '$dish'"
 $retval = mysqli_query( $conn, $up );
 if($retval){
 echo "Details updated.";
+/*$resul ="select Price,Quantity from cart where user ='Sakshi' and Dish='$dish'";
+                $re = mysqli_query($conn,$resul);
+                 $ro =  mysqli_fetch_array($re); */
+$tum = $qty*$price;
+ $dis = "update cart set total = $tum where user ='Sakshi' and Dish='$dish'";
+                 $rs = mysqli_query($conn,$dis);
+
 }
 }
 else
 {
 	$del = "DELETE FROM cart
-WHERE User='Sakshi' AND quantity=0";
+WHERE Quantity=0";
 $retvalI = mysqli_query( $conn, $del );
 if($retvalI){
 echo "Deleted.";
