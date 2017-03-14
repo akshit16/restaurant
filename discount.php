@@ -5,7 +5,7 @@ include_once("Connection.php");
 
       
           
-$result ="select code,discount from coupon where user ='akshit'";
+$result ="select code,discount from coupon where user ='Sakshi'";
                 $res = mysqli_query($conn,$result);
                 $row =  mysqli_fetch_array($res);
                 //echo $row['code'];
@@ -13,17 +13,20 @@ $result ="select code,discount from coupon where user ='akshit'";
                 $coupon = $_POST['coupne'];
                 $_SESSION['coupon'] = $coupon;
                 //echo $coupon;
-                $resul ="select Dish,Price,Quantity from cart where user ='akshit'";
+                $resul ="select Dish,Price,Quantity,total from cart where user ='Sakshi'";
                 $re = mysqli_query($conn,$resul);
                 $total=0;
+                //$sum =0;
                 while ($ro =  mysqli_fetch_array($re) ){
-                	 $total += $ro['Price']*$ro['Quantity'];}
+                   // $sum = $ro['Price']*$ro['Quantity'];
+                	 $total += $ro['total'];
+                    }
                 	 //echo "$total";
 
                 if($coupon==$row['code'])
                 {
                    $tot = $total - ($total*$row['discount']/100);
-                   //echo $tot;
+                   echo $tot;
                    echo "coupon applied";
                 }
                 else
@@ -31,7 +34,7 @@ $result ="select code,discount from coupon where user ='akshit'";
                 	$tot = $total;
                 	echo "invalid coupon";
                 }
-                $dis = "update cart set Discount = $tot where user ='akshit'";
+                $dis = "update cart set Discount = $tot where user ='Sakshi'";
                  $rs = mysqli_query($conn,$dis);
 
 header('Refresh: 1; url=checkout.php');

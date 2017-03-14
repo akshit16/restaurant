@@ -16,8 +16,8 @@ $num = mysqli_num_rows($res1);
 if($num == 0)
 {
 $sum = $qty*$price;
-$ins = "insert into cart(User,Dish,price,quantity,total,discount) 
-values ('Sakshi','$dish',$price,$qty,$sum,20)";
+$ins = "insert into cart(User,Dish,price,quantity,total) 
+values ('Sakshi','$dish',$price,$qty,$sum)";
 if(! mysqli_query( $conn, $ins ))
 {
 die(mysqli_error($conn));}
@@ -37,7 +37,17 @@ echo "Details updated.";
 $tum = $qty*$price;
  $dis = "update cart set total = $tum where user ='Sakshi' and Dish='$dish'";
                  $rs = mysqli_query($conn,$dis);
-
+                 $sel = "select total from cart where user ='Sakshi'";
+                  $aks = mysqli_query($conn,$sel);
+               // $row =  mysqli_fetch_array($res);
+                $total=0;
+                //$sum =0;
+                while ($pow =  mysqli_fetch_array($aks) ){
+                   // $sum = $ro['Price']*$ro['Quantity'];
+                     $total += $pow['total'];
+                    }
+                 $d = "update cart set Discount = $total where user ='Sakshi' ";
+$a = mysqli_query($conn,$d);
 }
 if($qty == 0)
 {

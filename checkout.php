@@ -407,7 +407,7 @@ include_once("Connection.php");
                             <td class="ctg-type"> Product</td>
                             <td class="cgt-des"> Total</td>
                         </tr>
-                        </thead><?php  $result ="select Dish,Price,Quantity from cart where user ='akshit'";
+                        </thead><?php  $result ="select Dish,Price,Quantity from cart where user ='Sakshi'";
                 $res = mysqli_query($conn,$result);
                 $total=0;
                 
@@ -420,22 +420,42 @@ include_once("Connection.php");
                             $total += $row['Price']*$row['Quantity']; }
                             
                             echo'<tr class="cart_item">';
-                               echo '<td class="ctg-type">After Discount(if applicable)</td>';
-                                echo'<td class="cgt-des">'; ?><?php  $result ="select Discount from cart where user ='akshit'";
+                               echo '<td class="ctg-type">Before Discount</td>';
+                                echo'<td class="cgt-des">'; ?><?php  $result ="select total from cart where user ='Sakshi'";
                 $res = mysqli_query($conn,$result);
-                $row =  mysqli_fetch_array($res);
-                echo $row['Discount'];?> </td>
+                //$row =  mysqli_fetch_array($res);
+                $total=0;
+                //$sum =0;
+                while ($row =  mysqli_fetch_array($res) ){
+                   // $sum = $ro['Price']*$ro['Quantity'];
+                     $total += $row['total'];
+                    }
+                echo $total;?> </td>
                             </tr>
                             <tr class="cart_item">
                                 <td class="ctg-type">Shipping</td>
                                 <td class="cgt-des">Free Shiping</td>
                             </tr>
                             <tr class="cart_item">
-                                <td class="ctg-type"> Total</td>
-                                <td class="cgt-des"> <?php  $result ="select Discount from cart where user ='akshit'";
+                                <td class="ctg-type"> Final Amount (After Discount via coupon)</td>
+                                <td class="cgt-des"> <?php  $result ="select total,Discount from cart where user ='Sakshi'";
                 $res = mysqli_query($conn,$result);
-                $row =  mysqli_fetch_array($res);
-                echo $row['Discount'];?> </td>
+               // $row =  mysqli_fetch_array($res);
+                $total=0;
+                //$sum =0;
+                while ($row =  mysqli_fetch_array($res) ){
+                   // $sum = $ro['Price']*$ro['Quantity'];
+                     $total += $row['total'];
+                    }
+               // $d = "update cart set Discount = $total where user ='Sakshi'";
+//$a = mysqli_query($conn,$d);
+$resu ="select Discount from cart where user ='Sakshi'";
+                $tes = mysqli_query($conn,$resu);
+               // $row =  mysqli_fetch_array($res);
+                $total=0;
+                //$sum =0;
+                $r =  mysqli_fetch_array($tes);
+                echo $r['Discount'];?> </td>
                             </tr>
                         </tbody>
                     </table>
