@@ -27,15 +27,12 @@ echo "successful";
 }
 else
 {
-if($qty != 0)
-{
 $up = "update cart set quantity = $qty where user = 'Sakshi' and Dish = '$dish'";
 $retval = mysqli_query( $conn, $up );
 if($retval){
 echo "Details updated.";
 }
-}
-else
+if($qty == 0)
 {
 	$del = "DELETE FROM cart
 WHERE User='Sakshi' AND quantity=0";

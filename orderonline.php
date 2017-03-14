@@ -473,27 +473,27 @@ include_once("Connection.php");
                                           </tr>
                                         </thead>
                                         <tbody>
-                                         	<?php  
-													$sql="select id,Dish,Price from menu where Category='Beverages'";
-													$res = mysqli_query($conn,$sql);
-													$count = 1;
-													while ($row =  mysqli_fetch_array($res) ){
-														echo '<tr><td>';
-														echo $row['Dish'];
-														echo '</td><td>';
-														echo $row['Price'];
-														echo '</td><td>';
-														echo "<div class='addp'><span>";
-														 echo'<button type="button" class="minus" name = "mb'.$count.'" value="'.$row['id'].'">-</button>';
-													    echo  '<span class="figure" id = "fb'. $count.'">0</span>';
-														echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
-														echo '<button type="button" class="plus" name = "pb'.$count.'" value="'.$row['id'].'" >+</button>';
-														echo '</span></div>';
-														echo "</td></tr>";
-														$count++;
-														}
-														
-										?>
+                                          <?php  
+                          $sql="select id,Dish,Price from menu where Category='Beverages'";
+                          $res = mysqli_query($conn,$sql);
+                          $count = 1;
+                          while ($row =  mysqli_fetch_array($res) ){
+                            echo '<tr><td>';
+                            echo $row['Dish'];
+                            echo '</td><td>';
+                            echo $row['Price'];
+                            echo '</td><td>';
+                            echo "<div class='addp'><span>";
+                             echo'<button type="button" class="minus" name = "mp'.$count.'" value="'.$row['id'].'">-</button>';
+                              echo  '<span class="figure" id = "fp'. $count.'">0</span>';
+                            echo '<input type="hidden" name="figvalue" value="0" class="figvalue">';
+                            echo '<button type="button" class="plus" name = "pp'.$count.'" value="'.$row['id'].'" >+</button>';
+                            echo '</span></div>';
+                            echo "</td></tr>";
+                            $count++;
+                            
+                            }
+                    ?>
                                         </tbody>
                                     </table>
                                   </div>
@@ -680,7 +680,7 @@ include_once("Connection.php");
             $(".minus").click(function(){
               
                 var x=$(this).attr('name');
-                var c = x.substring(1, 3);
+                var c = x.substring(1, 4);
                 var clicksv = Number($('#f'+c).html());
                 clicksv--; 
 				
@@ -691,7 +691,7 @@ include_once("Connection.php");
             });
             $(".plus").click(function(){
                 var x=$(this).attr('name');
-                var c = x.substring(1, 4); 
+                var c = x.substring(1, 3); 
                 var clicksv =  Number($('#f'+c).html());
                 clicksv++;
                 $('#f'+c).html(clicksv);
@@ -717,7 +717,7 @@ $("#full").load("cart1.php",{'id': id,
         $(".minus").click(function(){
 
            var id = $(this).attr('value');
-           alert(id);
+          // alert(id);
            var qty = this.nextSibling.innerHTML;
 //alert(qty);
 $("#full").load("cart1.php",{'id': id,
