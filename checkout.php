@@ -407,7 +407,7 @@ include_once("Connection.php");
                             <td class="ctg-type"> Product</td>
                             <td class="cgt-des"> Total</td>
                         </tr>
-                        </thead><?php  $result ="select Dish,Price,Quantity from cart where user ='Sakshi'";
+                        </thead><?php  $result ="select Dish,Price,Quantity from cart where user ='sakshi'";
                 $res = mysqli_query($conn,$result);
                 $total=0;
                 
@@ -421,7 +421,7 @@ include_once("Connection.php");
                             
                             echo'<tr class="cart_item">';
                                echo '<td class="ctg-type">Before Discount</td>';
-                                echo'<td class="cgt-des">'; ?><?php  $result ="select total from cart where user ='Sakshi'";
+                                echo'<td class="cgt-des">'; ?><?php  $result ="select total from cart where user ='sakshi'";
                 $res = mysqli_query($conn,$result);
                 //$row =  mysqli_fetch_array($res);
                 $total=0;
@@ -465,10 +465,10 @@ $resu ="select Discount from cart where user ='Sakshi'";
                 
                     <div class="payment-section mt20 clearfix">
                         <div class="pay-toggle">
-                            <form action="#">
+                            <form action="orderplace.php">
                                <div class="pay-type-total">
                                                                 <div class="input-box pt20 mt20">
-                                    <input type="submit" class="in-btn" name="placed" id="placed" onclick = "foo()" value="Place order">
+                                    <input type="submit" class="in-btn" name="placed" id="placed" value="Place order">
                                 </div>
                             </form>
                         </div>
@@ -585,7 +585,7 @@ $resu ="select Discount from cart where user ='Sakshi'";
                 //dataType:'json', // add json datatype to get json
      
                 success: function(data) {
-                    alert(data);
+                    //alert(data);
                     
 
                 }

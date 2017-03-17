@@ -5,13 +5,10 @@ include_once("Connection.php");
 
 $user = $_POST['user'];
 $pass = $_POST['pass'];
-$result ="select * from signup where user  = '$user' and password = '$pass'";
-$res = mysqli_query($conn,$result);
-$row = mysqli_fetch_array($res);
-if($row['user'] == $user && $row['password'] == $pass)
+if( $user=='sakshi' &&  $pass == '123')
 { 
-	$_SESSION['name'] = $row['name'];
-	header('Location: http://localhost/Restaurant/adminafterlogin.php');
+	//$_SESSION['name'] = $row['name'];
+	header('Location: http://localhost/restaurant2/restaurant/adminafterlogin.php');
 }
 else
 {

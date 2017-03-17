@@ -537,7 +537,7 @@ include_once("Connection.php");
                               <div class="total-top-rated">
                                     <ul>
                                        <?php  echo'<li>';
-                                       $result ="select id,Dish,Price,Quantity from cart where user ='akshit'  ";
+                                       $result ="select id,Dish,Price,Quantity from cart where user ='sakshi'  ";
                 $res = mysqli_query($conn,$result);
                 $total=0;
                 while ($row =  mysqli_fetch_array($res) ){
