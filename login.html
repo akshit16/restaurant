@@ -6,7 +6,7 @@
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Frosto || Login</title>
+        <title>Apna Dhaba || Login</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -53,7 +53,7 @@
 <div class="login-wraper">
        
     <!--header slider area are start-->
-    <div class="header-slider-area common-page login-page"> 
+    <div class="header-slider-area common-page"> 
       
     <!-- mobile-menu-area start -->
     <div class="mobile-menu-area">
@@ -63,10 +63,10 @@
                         <nav id="dropdown">
                             <ul>
                                 <li><a href="index.html">Home</a></li>
-								<li><a href="cart.html">Menu</a></li>
+								<li><a href="mymenu.php">Menu</a></li>
                                 <li><a href="news.html">News and Promotions</a></li>
-								<li><a href="orderonline.html">Order Online</a></li>
-								<li><a href="cart.html">Cart</a></li>
+								<li><a href="orderonline.php">Order Online</a></li>
+                                <li><a href="cart.html">Cart</a></li>
                                 <li><a href="about-us.html">About</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                                 <li><a href="login.html">Login</a></li>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-	</div> 
+	</div>
     <!--mobile menu area end-->
        
     <!--header menu area are start-->
@@ -112,66 +112,7 @@
 		<!--header-area are end-->
 		
 		<!-- Main menu area are start  -->
-		<div id="sticker" class="menu-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-					   <div class="main-menu">
-						   <nav>
-							<ul>
-							
-
-								<li><a href="index.html">Home</a></li>							
-								<li><a href="menu.html">Menu<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-									<div class="mega-menu mega-2">
-									   <span>
-										  <a href="menu.html">
-											 <span>Special Menu</span>
-											  <img src="img/mega1.jpg" alt="">
-										  </a>
-									   </span>
-									   <span>
-										  <a href="menu.html">
-											 <span>Breakfast Menu</span>
-											  <img src="img/mega2.jpg" alt="">                                      
-										  </a>
-									   </span>
-									   <span>
-										  <a href="menu.html">
-											 <span>Lunch Menu</span>
-											  <img src="img/mega3.jpg" alt="">
-										  </a>
-									   </span>
-									   <span>
-										  <a href="menu.html">
-											 <span>Dinner Menu</span>
-											  <img src="img/mega4.jpg" alt="">
-										  </a>
-									   </span>
-									   <span>
-										  <a href="menu.html">
-											 <span>Desserts</span>
-											  <img src="img/mega5.jpg" alt="">
-										  </a>
-									   </span>
-								   </div>
-								</li>
-								<li><a href="orderonline.html">Order Online</a></li>
-								<li><a href="cart.html">Cart</a></li>
-								<li><a href="checkout.html">Checkout</a></li>
-								<li><a href="news.html">News and Promotions</a></li>
-								<li><a href="about-us.html">About</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="login.html">Login</a></li>
-							</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Main menu area are end  -->   
-    </div>
+		
     <!--header menu area are end-->
     
     <!-- home slider start -->
@@ -193,16 +134,16 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-xs-12">
-                <form action="#" class="login-side">
+                <form action="userlogin.php" method="post" class="login-side">
 					<div class="login-reg">
 						<h3>Login</h3>
 						<div class="form-group">
-							<label class="control-label">E-Mail</label>
-							<input type="text" class="form-control" placeholder="E-Mail" value="" name="email">
+							<label class="control-label">User Id</label>
+							<input type="text" class="form-control" placeholder="User Id" name = "user"  >
 						</div>
 						<div class="form-group">
 							<label class="control-label">Password</label>
-							<input type="password" class="form-control" placeholder="Password" value="" name="password">
+							<input type="password" class="form-control" placeholder="Password" name="pass" >
 						</div>
 					</div>
 					<div class="frm-action">
@@ -217,28 +158,36 @@
                 </form>
             </div>
             <div class="col-sm-6 col-xs-12 lr2">
-                <form action="#">
+                <form action="signup.php" method="post">
               <div class="login-reg">
                 <h3>Register</h3>
 				<div class="form-group">
-                    <label class="control-label">E-Mail</label>
-                    <input type="text" class="form-control" placeholder="E-Mail" value="" name="email">
+                    <label class="control-label">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your Name" value="" name="name">
                 </div>
 				<div class="form-group">
-                    <label class="control-label">E-Mail</label>
-                    <input type="text" class="form-control" placeholder="E-Mail" value="" name="email">
+                    <label class="control-label">Username</label>
+                    <input type="text" class="form-control" placeholder="Enter your Username" value="" name="user">
                 </div>
 				<div class="form-group">
-                    <label class="control-label">E-Mail</label>
-                    <input type="text" class="form-control" placeholder="E-Mail" value="" name="email">
-                </div>
-                <div class="form-group">
-                    <label class="control-label">E-Mail</label>
-                    <input type="text" class="form-control" placeholder="E-Mail" value="" name="email">
-                </div>
-                <div class="form-group">
                     <label class="control-label">Password</label>
                     <input type="password" class="form-control" placeholder="Password" value="" name="password">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Contact</label>
+                    <input type="text" class="form-control" placeholder="Contact Number" value="" name="contact">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Email</label>
+                    <input type="email" class="form-control" placeholder="Email Id" value="" name="email">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Address</label>
+                    <input type="text" class="form-control" placeholder="Address" value="" name="address">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Referral</label>
+                    <input type="text" class="form-control" placeholder="Referral" value="" name="referal">
                 </div>
                 </div>
                 <div class="frm-action">
@@ -265,9 +214,9 @@
                          <h1>Delivery Service</h1>
                          <div class="address">
                             <span>
-                                Opposite IIT BHU gate,<br>
-                                AD Street Varanasi -14<br>
-                                <span class="email">frosto@gmail.com</span>
+                                No. 11a, Kangayanellore Road, Opposite VIT College,<br>
+                                 Vaibhav Nagar, Katpadi, Vellore, Tamil Nadu 632014<br>
+                                <span class="email">apnadhaba@gmail.com</span>
                             </span>
                             <div class="phone-no">
                                 <span>9655770461, 8680896643</span>
@@ -294,7 +243,7 @@
                         </div>
                          <h1>Subscribe Us</h1>
                         <div class="detail-subs">
-                            Subscribe to the <span>Frosto</span> newsletter to get <br> regular update about offers
+                            Subscribe to the <span>Apna Dhaba</span> newsletter to get <br> regular update about offers
                         </div>
                         <form action="#">
                             <div class="input-box">

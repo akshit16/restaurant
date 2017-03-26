@@ -11,7 +11,7 @@ $row = mysqli_fetch_array($res);
 if($row['user'] == $user && $row['password'] == $pass)
 { 
 	$_SESSION['name'] = $row['name'];
-	header('Location: http://localhost/Restaurant/restaurant/userafterlogin.php');
+	header('Location: http://localhost/res/restaurant/index.html');
 }
 else
 {

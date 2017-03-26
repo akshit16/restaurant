@@ -42,7 +42,7 @@ if(! mysqli_query( $conn, $sq ))
 {
 die(mysqli_error($conn));}
 else{ 
-echo "successful";
+//echo "successful";
 }
 $cod = rand(100000,999999);
 $s = "insert into coupon(user,code,amount,discount) values('$usr','$cod',500,20)";
@@ -50,7 +50,16 @@ if(! mysqli_query( $conn, $s ))
 {
 die(mysqli_error($conn));}
 else{ 
-echo "successful";
+//echo "successful";
+header('Location: http://localhost/res/restaurant/login.html');
 }
+$r = "delete from coupon where user =''";
+if(! mysqli_query( $conn, $r ))
+{
+die(mysqli_error($conn));}
+else{ 
+//echo "successful";
+}
+
 
 ?>
