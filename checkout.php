@@ -420,7 +420,7 @@ include_once("Connection.php");
                             $total += $row['Price']*$row['Quantity']; }
                             
                             echo'<tr class="cart_item">';
-                               echo '<td class="ctg-type">Before Discount</td>';
+                               echo '<td class="ctg-type">Total Amount</td>';
                                 echo'<td class="cgt-des">'; ?><?php  $result ="select total from cart where user ='sakshi'";
                 $res = mysqli_query($conn,$result);
                 //$row =  mysqli_fetch_array($res);
@@ -437,7 +437,7 @@ include_once("Connection.php");
                                 <td class="cgt-des">Free Shiping</td>
                             </tr>
                             <tr class="cart_item">
-                                <td class="ctg-type"> Final Amount (After Discount via coupon)</td>
+                                <td class="ctg-type"> Amount (If coupon applied)</td>
                                 <td class="cgt-des"> <?php  $result ="select total,Discount from cart where user ='Sakshi'";
                 $res = mysqli_query($conn,$result);
                // $row =  mysqli_fetch_array($res);

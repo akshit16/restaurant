@@ -209,7 +209,7 @@ include_once("Connection.php");
                             </tr>
                         </thead>
                        <?php echo '<tbody>';
-                            $result ="select Dish,Price,Quantity from cart where user ='akshit'  ";
+                            $result ="select Dish,Price,Quantity,total from cart where user ='Sakshi'  ";
                 $res = mysqli_query($conn,$result);
                 $total=0;
                 while ($row =  mysqli_fetch_array($res) ){
@@ -252,7 +252,7 @@ include_once("Connection.php");
                         <tbody>
                             <tr class="cart_item">
                                 <td class="ctg-type"> Total</td>
-                                <td class="cgt-des"><?php  $result ="select Dish,Price,Quantity from cart where user ='akshit'";
+                                <td class="cgt-des"><?php  $result ="select Dish,Price,Quantity,Discount from cart where user ='Sakshi'";
                 $res = mysqli_query($conn,$result);
                 $total=0;
                 while ($row =  mysqli_fetch_array($res) ){

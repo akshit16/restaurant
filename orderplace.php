@@ -23,7 +23,7 @@ echo "Deleted.";
                 {
                 	//$dish[] = $row['Dish'];
                 	//echo $row['Dish'];
-                	 $sql ="insert into userorder(user,address,dish,quantity,tprice,time_date,status) values('Sakshi','{$ro["address"]}','{$row["Dish"]}',{$row["Quantity"]},{$row["Discount"]},'2013-07-17 18:33:55','pending')";
+                	 $sql ="insert into userorder(user,address,dish,quantity,tprice,time_date,status) values('Sakshi','{$ro["address"]}','{$row["Dish"]}',{$row["Quantity"]},{$row["Discount"]},'$date','pending')";
                 	$re = mysqli_query($conn,$sql);
           
                 }
