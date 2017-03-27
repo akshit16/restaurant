@@ -5,7 +5,7 @@ include_once("Connection.php");
 
       
           
-$result ="select code,discount from coupon where user ='Sakshi'";
+$result ="select code,discount from coupon where user ='{$_SESSION["user"]}'";
                 $res = mysqli_query($conn,$result);
                 $row =  mysqli_fetch_array($res);
                 //echo $row['code'];
@@ -13,7 +13,7 @@ $result ="select code,discount from coupon where user ='Sakshi'";
                 $coupon = $_POST['coupne'];
                 $_SESSION['coupon'] = $coupon;
                 //echo $coupon;
-                $resul ="select Dish,Price,Quantity,total from cart where user ='Sakshi'";
+                $resul ="select Dish,Price,Quantity,total from cart where user ='{$_SESSION["user"]}'";
                 $re = mysqli_query($conn,$resul);
                 $total=0;
                 //$sum =0;
@@ -34,7 +34,7 @@ $result ="select code,discount from coupon where user ='Sakshi'";
                 	$tot = $total;
                 	echo "invalid coupon";
                 }
-                $dis = "update cart set Discount = $tot where user ='Sakshi'";
+                $dis = "update cart set Discount = $tot where user ='{$_SESSION["user"]}'";
                  $rs = mysqli_query($conn,$dis);
 
 header('Refresh: 1; url=checkout.php');

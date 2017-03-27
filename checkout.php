@@ -267,37 +267,18 @@ include_once("Connection.php");
                             <div class="billing-details">
                                 <div class="contact-text right-side">
                                       <h2>Billing Details</h2>
-                            <form action="#">
-                               <div class="first-last-name">
-                                    <div class="input-box name1">
-                                        <label>First Name</label>
-                                        <input type="text" name="namm" class="info" placeholder="First Name">
-                                    </div>
-                                    <div class="input-box name2">
-                                        <label>Last Name</label>
-                                        <input type="text" name="namm" class="info" placeholder="Last Name">
-                                    </div>
-                               </div>
-                                <div class="input-box">
-                                    <label>Company Name</label>
-                                    <input type="text" name="cpany" class="info" placeholder="Company Name">
-                                </div>
-                               <div class="first-last-name">
-                                    <div class="input-box name1">
-                                        <label>Email Address</label>
-                                        <input type="email" name="email" class="info" placeholder="Your Email">
-                                    </div>
-                                    <div class="input-box name2">
-                                        <label>Phone Number</label>
-                                        <input type="text" name="phone" class="info" placeholder="Phone Number">
-                                    </div>
-                               </div>
+                            <form action="updateadd.php" method="post">
+                              
+                               
+                                   
+                              
                                
                                 <div class="input-box">
                                     <label>Address <em>*</em></label>
-                                    <input type="text" name="add1" class="info" placeholder="Street Address">
-                                    <input type="text" name="add2" class="info mt10" placeholder="Apartment, suite, unit etc. (optional)">
+                                    <input type="text" name="add" id ="add" class="info" placeholder="Full Address">
+                                   
                                 </div>
+                                <button type="submit" value ="submit">Submit</button>
                                
                                 <!--<div class="input-box">
                                     <label>Town/City <em>*</em></label>
@@ -313,7 +294,7 @@ include_once("Connection.php");
                                         <label>Post Code/Zip Code<em>*</em></label>
                                         <input type="text" name="phone" class="info" placeholder="Phone Number">
                                     </div>
-                                </div>-->
+                                </div>--><br>
                                 
                                 <div class="create-acc clearfix">
                                     <div class="acc-toggle">
@@ -407,7 +388,7 @@ include_once("Connection.php");
                             <td class="ctg-type"> Product</td>
                             <td class="cgt-des"> Total</td>
                         </tr>
-                        </thead><?php  $result ="select Dish,Price,Quantity from cart where user ='sakshi'";
+                        </thead><?php  $result ="select Dish,Price,Quantity from cart where user ='{$_SESSION["user"]}'";
                 $res = mysqli_query($conn,$result);
                 $total=0;
                 
@@ -421,7 +402,7 @@ include_once("Connection.php");
                             
                             echo'<tr class="cart_item">';
                                echo '<td class="ctg-type">Total Amount</td>';
-                                echo'<td class="cgt-des">'; ?><?php  $result ="select total from cart where user ='sakshi'";
+                                echo'<td class="cgt-des">'; ?><?php  $result ="select total from cart where user ='{$_SESSION["user"]}'";
                 $res = mysqli_query($conn,$result);
                 //$row =  mysqli_fetch_array($res);
                 $total=0;
@@ -438,7 +419,7 @@ include_once("Connection.php");
                             </tr>
                             <tr class="cart_item">
                                 <td class="ctg-type"> Amount (If coupon applied)</td>
-                                <td class="cgt-des"> <?php  $result ="select total,Discount from cart where user ='Sakshi'";
+                                <td class="cgt-des"> <?php  $result ="select total,Discount from cart where user ='{$_SESSION["user"]}'";
                 $res = mysqli_query($conn,$result);
                // $row =  mysqli_fetch_array($res);
                 $total=0;
@@ -449,7 +430,7 @@ include_once("Connection.php");
                     }
                // $d = "update cart set Discount = $total where user ='Sakshi'";
 //$a = mysqli_query($conn,$d);
-$resu ="select Discount from cart where user ='Sakshi'";
+$resu ="select Discount from cart where user ='{$_SESSION["user"]}'";
                 $tes = mysqli_query($conn,$resu);
                // $row =  mysqli_fetch_array($res);
                 $total=0;
@@ -612,6 +593,29 @@ window.location.reload();
 return false;
 });
 });
+
+ $(document).ready(function(){
+$("#submit").click(function(){
+var add = $("#add").val();
+
+// Returns successful data submission message when the entered information is stored in database.
+var dataString = 'add='+ add; 
+$.ajax({
+type: "POST",
+url: "updateadd.php",
+data: dataString,
+cache: false,
+success: function(result){
+//alert(result);
+window.alert("address updated");
+window.location.reload();
+}
+});
+
+return false;
+});
+});
+
 
 
         </script>

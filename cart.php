@@ -209,7 +209,7 @@ include_once("Connection.php");
                             </tr>
                         </thead>
                        <?php echo '<tbody>';
-                            $result ="select Dish,Price,Quantity,total from cart where user ='Sakshi'  ";
+                            $result ="select Dish,Price,Quantity,total from cart where user ='{$_SESSION["user"]}'  ";
                 $res = mysqli_query($conn,$result);
                 $total=0;
                 while ($row =  mysqli_fetch_array($res) ){
@@ -218,8 +218,10 @@ include_once("Connection.php");
                                 echo'<td class="item-title">';echo $row['Dish']; echo'</td>';
                                 echo'<td class="item-price">'; echo $row['Price']; echo'</td>';
                                 echo '<td class="item-qty">'; echo $row['Quantity']; echo '</td>';
-                                echo'<td class="total-price">'; echo $row['Price']*$row['Quantity']; echo'</td>';
-                            echo'</tr>';}?>
+                                echo'<td class="total-price">'; echo $row['Price']*$row['Quantity'];
+                                 echo'</td>';
+                            echo'</tr>';}
+                           ?>
                             <!--tr class="cart_item">
                                 <td class="cart-action" colspan="6">
                                     <div class="coupne-area">
@@ -252,7 +254,7 @@ include_once("Connection.php");
                         <tbody>
                             <tr class="cart_item">
                                 <td class="ctg-type"> Total</td>
-                                <td class="cgt-des"><?php  $result ="select Dish,Price,Quantity,Discount from cart where user ='Sakshi'";
+                                <td class="cgt-des"><?php  $result ="select Dish,Price,Quantity,Discount from cart where user ='{$_SESSION["user"]}'";
                 $res = mysqli_query($conn,$result);
                 $total=0;
                 while ($row =  mysqli_fetch_array($res) ){
@@ -263,7 +265,10 @@ include_once("Connection.php");
 
                                                           $total +=  $row['Quantity']*$row['Price'];}
                                                           echo $total;
-                                                          $_SESSION['a']=$total;?>
+                                                          $_SESSION['a']=$total;
+ $d = "update cart set Discount = $total where user ='{$_SESSION["user"]}' ";
+$a = mysqli_query($conn,$d);
+                                                          ?>
                                        </td>
                             </tr>
                         </tbody>
