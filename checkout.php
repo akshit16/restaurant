@@ -594,27 +594,7 @@ return false;
 });
 });
 
- $(document).ready(function(){
-$("#submit").click(function(){
-var add = $("#add").val();
-
-// Returns successful data submission message when the entered information is stored in database.
-var dataString = 'add='+ add; 
-$.ajax({
-type: "POST",
-url: "updateadd.php",
-data: dataString,
-cache: false,
-success: function(result){
-//alert(result);
-window.alert("address updated");
-window.location.reload();
-}
-});
-
-return false;
-});
-});
+ 
 
 
 

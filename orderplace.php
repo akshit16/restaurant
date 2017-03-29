@@ -7,7 +7,7 @@ $result ="select Dish,Price,Quantity,Discount from cart where user ='{$_SESSION[
                 date_default_timezone_set("Asia/Kolkata");
                $date= date('d-m-Y H:i:s');
 //$timestamp = STR_TO_DATE( '$date', '%d/%m/%Y %H:%i:%s');
-                 $add ="select address from signup where user ='{$_SESSION["user"]}'";
+                 $add ="select address,email,contact from signup where user ='{$_SESSION["user"]}'";
                $r = mysqli_query($conn,$add);
 
                $ro =  mysqli_fetch_array($r);
@@ -23,13 +23,14 @@ $tow =  mysqli_fetch_array($res);
                 {
                 	//$dish[] = $row['Dish'];
                 	//echo $row['Dish'];
-                	 $sql ="insert into userorder(user,address,dish,quantity,tprice,time_date,status) values('{$_SESSION["user"]}','{$ro["address"]}','{$row["Dish"]}',{$row["Quantity"]},{$row["Discount"]},'$date','pending')";
+                	 $sql ="insert into userorder(user,address,dish,quantity,tprice,time_date,status) values('{$_SESSION["user"]}','{$ro["address"]}','{$row["Dish"]}',{$row["Quantity"]},{$row["Discount"]},'{$_SESSION['time']}','pending')";
                 	$re = mysqli_query($conn,$sql);
           
                 }
 
+
                echo "your order is placed";
-                $oid = "update orderid set amount = '{$tow["Discount"]}' where user = '{$_SESSION["user"]}' and address = '{$_SESSION['add']}' and date='{$_SESSION['time']}' ";
+                $oid = "update orderid set amount = '{$tow["Discount"]}',email='{$ro["email"]}',contact= '{$ro["contact"]}' where user = '{$_SESSION["user"]}' and address = '{$_SESSION['add']}' and date='{$_SESSION['time']}' ";
 
 if(! mysqli_query( $conn, $oid ))
 {
