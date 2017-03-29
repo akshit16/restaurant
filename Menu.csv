@@ -1,0 +1,201 @@
+Sub,Category,Dish,Price
+Indian Chicken Mandi,Indian,Chicken Masala(Full),130
+Indian Chicken Mandi,Indian,Chicken Masala(half),80
+Indian Chicken Mandi,Indian,Chicken Korma(Full),130
+Indian Chicken Mandi,Indian,Chicken Korma(Half),80
+Indian Chicken Mandi,Indian,Chicken Makhani(Full),230
+Indian Chicken Mandi,Indian,Chicken Makhani(Half),120
+Indian Chicken Mandi,Indian,Chicken Kadahi(Full),130
+Indian Chicken Mandi,Indian,Chicken Kadahi(Half),80
+Indian Chicken Mandi,Indian,Chicken Do-Pyaja(Full),130
+Indian Chicken Mandi,Indian,Chicken Do-Pyaja(Half),80
+Indian Chicken Mandi,Indian,Chicken Curry(Full),120
+Indian Chicken Mandi,Indian,Chicken Curry(Half),80
+Indian Chicken Mandi,Indian,Chicken Handi(Full),250
+Indian Chicken Mandi,Indian,Chicken Handi(Half),130
+Indian Chicken Mandi,Indian,Chicken Muglal(Full),250
+Indian Chicken Mandi,Indian,Chicken Muglal(Half),130
+Indian Chicken Mandi,Indian,Chicken Hyderabadi(Full),250
+Indian Chicken Mandi,Indian,Chicken Hyderabadi(Half),130
+Indian Chicken Mandi,Indian,Chicken Rogan Josh(Full),250
+Indian Chicken Mandi,Indian,Chicken Rogan Josh(Half),130
+Indian Chicken Mandi,Indian,Chicken Kolhapuri(Full),250
+Indian Chicken Mandi,Indian,Chicken Kolhapuri(Half),130
+Indian Chicken Mandi,Indian,Godavari Chicken,130
+Indian Chicken Mandi,Indian,Rara Chicken,130
+Indian Chicken Mandi,Indian,Chi Tandoori Masala(Full),280
+Indian Chicken Mandi,Indian,Chi Tandoori Masala(Half),150
+Indian Chicken Mandi,Indian,Chicken Tikka Masala,130
+Indian Chicken Mandi,Indian,Chicken Kalimirch(Full),130
+Indian Chicken Mandi,Indian,Chicken Kalimirch(Half),80
+Indian Chicken Mandi,Indian,Chicken Kima Masala,140
+Indian Chicken Mandi,Indian,Chicken Sagwala(Full),130
+Indian Chicken Mandi,Indian,Chicken Sagwala(Half),80
+Indian Chicken Mandi,Indian,Butter Chicken(Full),130
+Indian Chicken Mandi,Indian,Butter Chicken(Half),80
+Indian Chicken Mandi,Indian,A D Spl Chicken(Full),270
+Indian Chicken Mandi,Indian,A D Spl Chicken(Half),140
+Indian Sabji Mandi,Indian,Aloo Gobi Masala(Dry/Gravy),55
+Indian Sabji Mandi,Indian,Aloo Mutter Tamater,55
+Indian Sabji Mandi,Indian,Aloo Capsicum Masala(Dry/Gravy),65
+Indian Sabji Mandi,Indian,Aloo Dum Punjabi,65
+Indian Sabji Mandi,Indian,Aloo Zeera(dry),55
+Indian Sabji Mandi,Indian,Aloo Methi(dry),55
+Indian Sabji Mandi,Indian,Mix Veg,65
+Indian Sabji Mandi,Indian,Veg Korma,65
+Indian Sabji Mandi,Indian,Tawa Garden,65
+Indian Sabji Mandi,Indian,Veg Butter Masala,65
+Indian Sabji Mandi,Indian,Veg Kima,65
+Indian Sabji Mandi,Indian,Kadhai Veg,65
+Indian Sabji Mandi,Indian,Bhindi Fry(dry),55
+Indian Sabji Mandi,Indian,Channa Masala,65
+Indian Sabji Mandi,Indian,Rajma Masala,65
+Indian Sabji Mandi,Indian,Bhind Masala,60
+Indian Sabji Mandi,Indian,Mushroom Masala,70
+Indian Sabji Mandi,Indian,Kaju Curry,80
+Indian Sabji Mandi,Indian,Green Peas Masala,65
+Indian Sabji Mandi,Indian,Veg Kolhapuri,65
+Indian Sabji Mandi,Indian,Sabji Milooni,70
+Indian Sabji Mandi,Indian,Veg Manchurian(Dry/Gravy),80
+Indian Paneer Mandi,Indian,Paneer Masala,75
+Indian Paneer Mandi,Indian,Paneer Butter Masala,80
+Indian Paneer Mandi,Indian,Kadhai Paneer,80
+Indian Paneer Mandi,Indian,Tawa Paneer,80
+Indian Paneer Mandi,Indian,Shimla Spl Paneer,95
+Indian Paneer Mandi,Indian,Palak Paneer,80
+Indian Paneer Mandi,Indian,Mutter Paneer,80
+Indian Paneer Mandi,Indian,Hariyali Paneer,75
+Indian Paneer Mandi,Indian,Kaju Paneer,90
+Indian Paneer Mandi,Indian,Sahi Paneer,90
+Indian Paneer Mandi,Indian,Paneer Pasanda,90
+Indian Paneer Mandi,Indian,Paneer Methi Malai Mutter,90
+Indian Paneer Mandi,Indian,Paneer Tikka Masala,95
+Indian Paneer Mandi,Indian,Paneer Do Pyaja,80
+Indian Paneer Mandi,Indian,Paneer Korma,80
+Indian Paneer Mandi,Indian,Paneer Bhurji,95
+Indian Paneer Mandi,Indian,A D Spl Paneer,95
+Dal,Indian,Dal Fry,45
+Dal,Indian,Dal Tadka,50
+Dal,Indian,Dal Makhani,70
+Kofta,Indian,Nargish Kofta Curry,90
+Kofta,Indian,Malai Kofta Curry,90
+Kofta,Indian,Paneer Kofta Curry,85
+Kofta,Indian,Veg Kofta Curry,85
+Chinese Veg Starter,Chinese,Paneer Manchurian,80
+Chinese Veg Starter,Chinese,Paneer Chilli,80
+Chinese Veg Starter,Chinese,Paneer 65,80
+Chinese Veg Starter,Chinese,Schzewan Paneer,80
+Chinese Veg Starter,Chinese,Gobi Manchurian,70
+Chinese Veg Starter,Chinese,Gobi Chilli,70
+Chinese Veg Starter,Chinese,Gobi 65,70
+Chinese Veg Starter,Chinese,Aloo Manchurian,70
+Chinese Veg Starter,Chinese,Aloo Chilli,70
+Chinese Veg Starter,Chinese,Aloo 65,70
+Chinese Veg Starter,Chinese,Chilli Mushroom,80
+Chinese Veg Starter,Chinese,Mushroom Manchurian,80
+Chinese Veg Starter,Chinese,Mushroom 65,80
+Chinese Non Veg Starter(Dry),Chinese,Chilli Chicken,100
+Chinese Non Veg Starter(Dry),Chinese,Schzewan Chicken,100
+Chinese Non Veg Starter(Dry),Chinese,Chicken Sweet 16,120
+Chinese Non Veg Starter(Dry),Chinese,Garlic Chicken,100
+Chinese Non Veg Starter(Dry),Chinese,Lemon Chicken,105
+Chinese Non Veg Starter(Dry),Chinese,Ginger Chicken,100
+Chinese Non Veg Starter(Dry),Chinese,Dragon Chicken,130
+Chinese Non Veg Starter(Dry),Chinese,Chicken 65,100
+Chinese Non Veg Starter(Dry),Chinese,Chicken Winglet(Full),140
+Chinese Non Veg Starter(Dry),Chinese,Chicken Winglet(Half),75
+Chinese Non Veg Starter(Dry),Chinese,Chicken Manchurian,100
+Chicken Non Veg(Gravy),Chinese,Chicken Manchurian,105
+Chicken Non Veg(Gravy),Chinese,Chilli Chicken,105
+Chicken Non Veg(Gravy),Chinese,Garlic Chicken,105
+Chicken Non Veg(Gravy),Chinese,Ginger Chicken,105
+Chicken Non Veg(Gravy),Chinese,Mehboob Chicken,120
+Chicken Non Veg(Gravy),Chinese,Schzewan Chicken,110
+Hot Bread,Hot Breads,Tawa Roti,7
+Hot Bread,Hot Breads,Tawa Butter Roti,8
+Hot Bread,Hot Breads,Tandoori Roti,9
+Hot Bread,Hot Breads,Tandoori Butter Roti,10
+Hot Bread,Hot Breads,Butter Naan,15
+Hot Bread,Hot Breads,Plain Kulcha,15
+Hot Bread,Hot Breads,Butter Kulcha,18
+Hot Bread,Hot Breads,Masala Kulcha,30
+Hot Bread,Hot Breads,Aloo Kulcha,30
+Hot Bread,Hot Breads,Paneer Kulcha,35
+Parantha,Hot Breads,Aloo Parantha,20
+Parantha,Hot Breads,Paneer Parantha,30
+Parantha,Hot Breads,Gobi Parantha,25
+Parantha,Hot Breads,Onion Parantha,25
+Parantha,Hot Breads,Plain Parantha,15
+Parantha,Hot Breads,Mix Parantha,25
+Tandoori Veg Starter,Tandoori,Paneer Tikka Masala,90
+Tandoori Veg Starter,Tandoori,Paneer Cheese Tikka ,100
+Tandoori Veg Starter,Tandoori,Tiranga Paneer,150
+Tandoori Veg Starter,Tandoori,Paneer Seek Kabab,120
+Tandoori Veg Starter,Tandoori,Veg Shakahari Plater,350
+Tandoori Veg Starter,Tandoori,Tandoori Gobi,80
+Tandoori Veg Starter,Tandoori,Aloo Angara,90
+Tandoori Veg Starter,Tandoori,Tandoori Sabji Ka Milan,150
+Tandoori Starter (Non Veg),Tandoori,Mix Chicken Plater,480
+Tandoori Starter (Non Veg),Tandoori,Tangari Kabab,130
+Tandoori Starter (Non Veg),Tandoori,Tandoori Chicken(Full),280
+Tandoori Starter (Non Veg),Tandoori,Tandoori Chicken(Half),150
+Tandoori Starter (Non Veg),Tandoori,Afghani Chicken(Full),300
+Tandoori Starter (Non Veg),Tandoori,Afghani Chicken(Half),160
+Tandoori Starter (Non Veg),Tandoori,Chicken Tikka Masala,120
+Tandoori Starter (Non Veg),Tandoori,Hariyali Kabab,120
+Tandoori Starter (Non Veg),Tandoori,Malai Kabab,130
+Tandoori Starter (Non Veg),Tandoori,Lahsuni Kabab,120
+Tandoori Starter (Non Veg),Tandoori,Adrakhi Kabab,120
+Tandoori Starter (Non Veg),Tandoori,Chicken Seek Kaba,140
+Beverages,Beverages,Masala Cold Drinks,25
+Beverages,Beverages,Lassi Sweet,25
+Beverages,Beverages,Lassi Salty,20
+Beverages,Beverages,Butter Milk,15
+Beverages,Beverages,Mineral Water,22
+Beverages,Beverages,Soft Drinks,14
+Beverages,Beverages,Soft Drinks(400 ml),25
+Veg Rice,Rice,Steam Rice,30
+Veg Rice,Rice,Kashmiri Pulao,80
+Veg Rice,Rice,Peas Pulao,70
+Veg Rice,Rice,Veg Pulao,65
+Veg Rice,Rice,Paneer Pulao,80
+Veg Rice,Rice,Ghee Rice,60
+Veg Rice,Rice,Jeera Rice,50
+Veg Rice,Rice,Curd Rice,50
+Veg Rice,Rice,Veg Fried Rice,50
+Veg Rice,Rice,Ceg Schzewan Fried Rice,60
+Veg Rice,Rice,Garlic Fried Rice,60
+Veg Rice,Rice,Mushroom Fred Rice,70
+Veg Rice,Rice,Veg Biryani,75
+Non Veg Rice,Rice,Hyd Chicken Biryani,110
+Non Veg Rice,Rice,Chicken Biryani,100
+Non Veg Rice,Rice,Mutton Biryani,130
+Non Veg Rice,Rice,Egg Biryani,80
+Non Veg Rice,Rice,Chicken Fried Rice,65
+Non Veg Rice,Rice,Schzewan Chicken Fried Rice,70
+Non Veg Rice,Rice,Egg Fried Rice,55
+Non Veg Rice,Rice,Schzewan Egg Fried Rice,60
+Mutton Gravy,Mutton and Egg,Mutton Rogan Josh(Full),220
+Mutton Gravy,Mutton and Egg,Mutton Rogan Josh(Half),120
+Mutton Gravy,Mutton and Egg,Spl Dhaniya Kima Mutton(Full),220
+Mutton Gravy,Mutton and Egg,Spl Dhaniya Kima Mutton(Half),120
+Mutton Gravy,Mutton and Egg,Mutton Kadhai(Full),200
+Mutton Gravy,Mutton and Egg,Mutton Kadhai(Half),110
+Ande Ke Funde,Mutton and Egg,Egg Curry,50
+Ande Ke Funde,Mutton and Egg,Egg Masala,55
+Ande Ke Funde,Mutton and Egg,Egg Bhurji,35
+Ande Ke Funde,Mutton and Egg,Egg Bhurji Curry,55
+Ande Ke Funde,Mutton and Egg,Egg Omlet,40
+Ande Ke Funde,Mutton and Egg,Omlet Curry,55
+Curd/Raita,Curd/Raita,Plain Curd,20
+Curd/Raita,Curd/Raita,Jeera Curd,25
+Curd/Raita,Curd/Raita,Bundi Raita,35
+Curd/Raita,Curd/Raita,Onion Raita,30
+Curd/Raita,Curd/Raita,Cucumber Raita,35
+Curd/Raita,Curd/Raita,Mix Raita,35
+Salad,Papad and Salad,Onion Salad,25
+Salad,Papad and Salad,Green Salad,35
+Salad,Papad and Salad,Masala Onion Salad,25
+Papd,Papad and Salad,Fried Papad,15
+Papd,Papad and Salad,Masala Papad,25
+Papd,Papad and Salad,Roasted Papad,10

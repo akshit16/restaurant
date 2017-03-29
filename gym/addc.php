@@ -38,109 +38,13 @@ include 'head.php';
           </div>
           <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
-			<form action="addclient.php" method="post" id="clientadd" enctype="multipart/form-data">
+			<form action="generate.php" method="post" id="clientadd" enctype="multipart/form-data">
+              
               <div class="form-group">
-                <label for="name">Profile Picture</label>
-                <input name="img" class="form-control" type="file">
-              </div>
-              <div class="form-group">
-                <label for="reg">Registration Number</label>
-                <input name="reg" class="form-control" type="text">
+                <label for="cou">Generate Coupon</label>
+                <input name="cou" class="form-control" type="text">
               </div>     
-              <div class="form-group">
-                <label for="name">Customer Name</label>
-                <input name="name" class="form-control" type="text">
-              </div>
-              <div class="form-group">
-                <label for="contact">Father's Name</label>
-                <input name="fname" class="form-control" type="text">
-              </div>
-              <div class="form-group">
-                <label for="contact">Address</label>
-                <input name="address" class="form-control" type="text">
-              </div>
-              <div class="form-group">
-                <label for="contact">Contact</label>
-                <input name="contact" class="form-control" type="text">
-              </div>
-              <div class="form-group">
-                <label for="occupation">Occupation</label>
-                <input name="occupation" class="form-control" type="text">
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input name="email" class="form-control" type="text">
-              </div>
-              <div class="form-group">
-                <label for="package">Package</label>
-                <input name="package" class="form-control" type="text">
-              </div>
-              <div class="row gutter-xs">
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label for="doj">Date of Joining</label>
-                    <input name="doj" class="form-control" type="date">
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label for="dob">Date of Birth</label>
-                    <input name="dob" class="form-control" type="date">
-                  </div>
-                </div>
-              </div>
-              <div class="row gutter-xs">
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label for="regdate">Registration Date</label>
-                    <input name="regdate" class="form-control" type="date">
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label for="contact">Due Date</label>
-                    <input name="duedate" class="form-control" type="date">
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="contact">Deposit Amout</label>
-                <input name="deposit" class="form-control" type="text">
-              </div>
-              <div class="form-group">
-                <label for="contact">Due Amount</label>
-                <input name="due" class="form-control" type="text">
-              </div>
-             <div class="row gutter-xs">
-                <div class="col-sm-6">
-                  <div class="form-group">
-
-                    <label for="status">Purpose</label>
-                    <select name="purpose" class="custom-select">
-                      <option value="Not Selected">Not Selected</option>
-                      <option value="Gym">Gym</option>
-                      <option value="Dance">Dance</option>
-                      <option value="Aerobics">Aerobics</option>
-                      <option value="Cardio">Cardio</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label for="batch">Batch</label>
-                    <select name="batch" class="custom-select">
-                      <option value="Not Selected">Not Selected</option>
-                      <option value="Morning">Morning</option>
-                      <option value="Evening">Evening</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="note">Note</label>
-                <input name="note" class="form-control" type="text">
-              </div>
-			  
+              
 			 
               <div class="form-group">
                 <input type="submit" id="addc" class="btn btn-primary" type="button">
