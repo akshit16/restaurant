@@ -38,4 +38,13 @@ die(mysqli_error($conn));}
 else{ 
 //echo "successful";
 }
+ if ((isset($_SESSION['coupon']) && $_SESSION['coupon'] != '')){
+$coup = "update coupon set code = 'no', discount= 0 where user='{$_SESSION['user']}'and code = '{$_SESSION['coupon']}'";
+if(! mysqli_query( $conn, $coup ))
+{
+die(mysqli_error($conn));}
+else{ 
+//echo "successful";
+}
+}
                 ?>
